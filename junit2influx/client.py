@@ -65,7 +65,6 @@ def prepare_build_point(time, context, tests_data, measurement):
         final_data['tags']['result'] = 'failure'
     else:
         final_data['tags']['result'] = 'success'
-    print(final_data)
     return final_data
 
 
@@ -78,7 +77,5 @@ def push(junit_file, context, influxdb_url, time=None):
     ]
     build_point = prepare_build_point(now, context, ts, 'builds')
     client = influxdb.InfluxDBClient.from_dsn(influxdb_url, timeout=60)
-    print(test_points)
-    
     client.write_points([build_point])
     client.write_points(test_points)
