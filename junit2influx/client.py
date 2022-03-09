@@ -1,5 +1,6 @@
 import datetime
 import influxdb
+import uuid
 
 from junit2influx import xunitparser
 
@@ -15,13 +16,14 @@ def prepare_test_point(time, context, test_data, measurement):
     # to count a number of rows, only values themselves.
     # so we add a dummy field with 1 as the values, so we can sum on it
     final_data['fields']['_quantity'] = 1
+    # final_data['fields']['uuid'] =  str(uuid.uuid4())
     final_data['fields']['duration'] = test_data['time']
     final_data['fields']['name'] = test_data['name']
     final_data['fields']['classname'] = test_data['classname']
-    final_data['fields']['file'] = test_data['file']
-    final_data['fields']['tests'] = 1
+    # final_data['fields']['tests'] = 1
     final_data['tags']['result'] = test_data['result']
     final_data['tags']['feature'] = test_data['feature']
+    final_data['tags']['uuid'] = str(uuid.uuid4())
 
     if test_data['result'] == "success":
         final_data['fields']['pass'] = 1

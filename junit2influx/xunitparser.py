@@ -43,7 +43,6 @@ class Parser(object):
             'classname': tc_classname,
             'name': el.attrib['name'],
             'time': to_float(el.attrib.get('time')),
-            'file': el.attrib.get('file'),
             'feature': el.attrib.get('feature'),
         }
         for e in el:
