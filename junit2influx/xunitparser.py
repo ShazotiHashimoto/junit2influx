@@ -50,6 +50,7 @@ class Parser(object):
             if e.tag in ('failure', 'error', 'skipped'):
                 tc['result'] = e.tag
                 tc['typename'] = e.attrib.get('type')
+                tc['message'] = e.attrib.get('message')
                 break
         else:
             tc['result'] = 'success'

@@ -20,6 +20,7 @@ def prepare_test_point(time, context, test_data, measurement):
     final_data['fields']['duration'] = test_data['time']
     final_data['fields']['name'] = test_data['name']
     final_data['fields']['classname'] = test_data['classname']
+    final_data['fields']['message'] = test_data['message']
     # final_data['fields']['tests'] = 1
     final_data['tags']['result'] = test_data['result']
     final_data['tags']['feature'] = test_data['feature']
@@ -31,6 +32,7 @@ def prepare_test_point(time, context, test_data, measurement):
     else:
         final_data['fields']['pass'] = 0
         final_data['fields']['fail'] = 1
+    print(final_data)
     return final_data
 
 
