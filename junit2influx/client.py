@@ -32,7 +32,6 @@ def prepare_test_point(time, context, test_data, measurement):
     else:
         final_data['fields']['pass'] = 0
         final_data['fields']['fail'] = 1
-    print(final_data)
     return final_data
 
 
