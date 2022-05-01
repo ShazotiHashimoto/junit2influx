@@ -44,6 +44,7 @@ class Parser(object):
             'name': el.attrib['name'],
             'time': to_float(el.attrib.get('time')),
             'feature': el.attrib.get('feature'),
+            'message': "Pass",
         }
         for e in el:
             # error takes over failure in JUnit 4
