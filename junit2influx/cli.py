@@ -42,7 +42,7 @@ class ContextArg(click.types.StringParamType):
 
 @click.command(
     help="""
-    Version 0.22 - Shahzaad Tayob
+    Version 0.23 - Shahzaad Tayob
 
     Extract test data from a junit file and send it to influxdb:
         junit2influx test.xml --influxdb-url url
